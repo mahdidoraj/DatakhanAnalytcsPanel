@@ -1,0 +1,39 @@
+<h3 class="text-center mb-3">Register</h3>
+<form>
+	<div class="p-fluid">
+		<p-float-label variant="on" class="mt-3">
+			<label>Email</label>
+			<input pInputText type="email"/>
+		</p-float-label>
+		<p-float-label variant="on" class="mt-3">
+			<label>Username</label>
+			<input pInputText/>
+		</p-float-label>
+		<p-float-label variant="on" class="mt-3">
+			<label>Password</label>
+			<input pInputText type="password"/>
+		</p-float-label>
+		<button pButton type="submit" label="Register" class="p-button-success mt-2 w-full"></button>
+	</div>
+</form>
+
+<div class="divider"><span>OR</span></div>
+
+<div class="row row-cols-4">
+	<div class="col-auto">
+		<button pButton icon="fas fa-google" class="p-button-danger w-full mb-2"></button>
+	</div>
+	<div class="col-auto">
+		<button pButton icon="fas fa-github" class="p-button-secondary w-full mb-2"></button>
+	</div>
+	<div class="col-auto">
+		<button pButton icon="fas fa-facebook" class="p-button-info w-full mb-2"></button>
+	</div>
+	<div class="col-auto">
+		<button pButton icon="fas fa-apple" class="p-button-dark w-full"></button>
+	</div>
+</div>
+
+<p class="text-center mt-3">
+	Already have an account? <a routerLink="/auth/login">Login</a>
+</p>

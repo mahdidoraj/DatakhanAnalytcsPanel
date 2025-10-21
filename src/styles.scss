@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+//html, body { height: 100%; background: var(--ws-bg, #0b1016); }
+//.ws-card { background: var(--ws-card); color: var(--ws-text); border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,.08); }
+//.ws-muted { color: #8b98a5; }
+//.ws-gap { gap: 1rem; }
+
+
+.divider {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	margin: 1rem 0;
+
+	&::before,
+	&::after {
+		content: '';
+		flex: 1;
+		border-bottom: 1px solid #ccc;
+	}
+
+	span {
+		padding: 0 10px;
+		color: #888;
+		font-size: 0.9rem;
+	}
+}
+
+.social-buttons button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.p-inputtext {
+	width: 100%;
+}
+
+.w-full {
+	width: 100%;
+}

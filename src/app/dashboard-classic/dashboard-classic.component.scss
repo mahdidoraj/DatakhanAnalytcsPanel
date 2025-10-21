@@ -1,0 +1,21 @@
+/* src/app/pages/dashboard-classic/dashboard-classic.component.scss */
+.dashboard-ux { background: #f6f8fb; padding: 12px; }
+
+.kpi-icon{
+	width:56px;height:56px;
+	background: linear-gradient(135deg,#e8e6ff,#f5f3ff);
+	color:#6f50ff; font-size:1.25rem;
+	display:grid; place-items:center;
+}
+.chart-h{ height:300px; }
+
+.card-header{ font-size:.95rem; }
+
+.offcanvas .form-label{ font-weight:600; }
+
+@media (max-width: 768px){
+	.chart-h{ height:260px; }
+}
+@media (max-width: 480px){
+	.chart-h{ height:220px; }
+}

@@ -1,0 +1,16 @@
+<h3 class="text-center mb-3">Login with Phone</h3>
+<form>
+	<div class="p-fluid">
+		<p-float-label>
+			<label>Phone Number</label>
+			<input pInputText placeholder="+98..."/>
+		</p-float-label>
+		<p-input-otp [length]="6"></p-input-otp>
+		<button routerLink="/auth/sso-register" pButton type="button" label="Send OTP"
+		        class="p-button-warning w-full"></button>
+	</div>
+</form>
+<p class="text-center mt-3">
+	<a>Back to Login</a>
+	<a routerLink="/auth/login">Back to Login</a>
+</p>
