@@ -1,3 +1,32 @@
+<!-- header.component.html (یا همون جایی که هدر را گذاشتی) -->
 <nav class="navbar-container sticky-top">
-	<p-menubar [model]="menuItems" class="glass-menubar w-100"></p-menubar>
+	<p-menubar
+		[model]="menuItems"
+		class="glass-menubar w-100"
+		[style]="{
+      '--p-menubar-background':'transparent',
+      '--p-menubar-border-color':'transparent',
+      '--p-menubar-color':'inherit',
+      '--p-menubar-item-focus-background':'rgba(255,255,255,0.06)'
+    }">
+
+		<!-- لوگو + نام محصول -->
+		<ng-template pTemplate="start">
+			<a class="brand d-flex align-items-center gap-2" href="#">
+				<img src="assets/logo.svg" alt="logo" class="brand-logo" />
+				<span class="brand-name">Social Analytics</span>
+				<p-badge value="Pro"></p-badge>
+			</a>
+		</ng-template>
+
+		<!-- اکشن‌های سمت راست -->
+		<ng-template pTemplate="end">
+			<div class="d-flex align-items-center gap-2">
+				<button pButton icon="fas fa-search" class="p-button-text p-button-rounded"></button>
+				<button pButton icon="fas fa-bell" class="p-button-text p-button-rounded"></button>
+				<p-avatar icon="fas fa-user" shape="circle"></p-avatar>
+			</div>
+		</ng-template>
+
+	</p-menubar>
 </nav>

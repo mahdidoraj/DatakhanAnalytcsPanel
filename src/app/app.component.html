@@ -1,8 +1,6 @@
 <main>
 	<div class="dashboard-ux" dir="rtl">
-
-		<app-shared-header></app-shared-header>
-		<div class="router-container mt-4" [@routeFade]="getState(routerOutlet)">
+		<div class="router-container" [@routeFade]="getState(routerOutlet)">
 			<router-outlet #routerOutlet="outlet"></router-outlet>
 		</div>
 	</div>

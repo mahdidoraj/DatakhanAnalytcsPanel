@@ -1,7 +1,23 @@
-<!-- src/app/pages/dashboard-classic/dashboard-classic.component.html -->
-<!-- NAVBAR -->
-
-<!-- KPIs -->
+<p-card>
+	<h1>test user style</h1>
+	<p>ba kossher</p>
+</p-card>
+<p-card>
+	<h1>test user style</h1>
+	<p>ba kossher</p>
+</p-card>
+<p-card>
+	<h1>test user style</h1>
+	<p>ba kossher</p>
+</p-card>
+<p-card>
+	<h1>test user style</h1>
+	<p>ba kossher</p>
+</p-card>
+<p-card>
+	<h1>test user style</h1>
+	<p>ba kossher</p>
+</p-card>
 <div class="container">
 	<div class="row g-3" *ngIf="!loadingKpi(); else kpiSkeletons">
 		<div class="col-12 col-sm-6 col-xl-3" *ngFor="let k of kpis()">
@@ -15,8 +31,8 @@
 	<!-- CHARTS -->
 	<div class="row g-3 mt-1">
 		<div class="col-12 col-lg-6">
-			<div class="card shadow-sm border-0 rounded-4">
-				<div class="card-header bg-white border-0 fw-semibold">احساسات در بازه زمانی</div>
+			<p-card class=" shadow-sm border-0 rounded-4">
+				<div class="card-header bg-transparent border-0 fw-semibold">احساسات در بازه زمانی</div>
 				<div class="card-body">
 					<div class="chart-h" *ngIf="!loadingCharts(); else chartSk1">
 						<apx-chart
@@ -34,12 +50,12 @@
 						<ws-skeleton [count]="1"></ws-skeleton>
 					</ng-template>
 				</div>
-			</div>
+			</p-card>
 		</div>
 
 		<div class="col-12 col-lg-6">
 			<div class="card shadow-sm border-0 rounded-4">
-				<div class="card-header bg-white border-0 fw-semibold">اینگیجمنت هفتگی بر اساس شبکه</div>
+				<div class="card-header bg-transparent border-0 fw-semibold">اینگیجمنت هفتگی بر اساس شبکه</div>
 				<div class="card-body">
 					<div class="chart-h" *ngIf="!loadingCharts(); else chartSk2">
 						<apx-chart
@@ -60,7 +76,7 @@
 
 		<div class="col-12 col-xl-4">
 			<div class="card shadow-sm border-0 rounded-4 h-100">
-				<div class="card-header bg-white border-0 fw-semibold">سهم شبکه‌ها</div>
+				<div class="card-header bg-transparent border-0 fw-semibold">سهم شبکه‌ها</div>
 				<div class="card-body">
 					<div class="chart-h" *ngIf="!loadingCharts(); else chartSk3">
 						<apx-chart
@@ -80,7 +96,7 @@
 
 		<div class="col-12 col-xl-8">
 			<div class="card shadow-sm border-0 rounded-4 h-100">
-				<div class="card-header bg-white border-0 fw-semibold d-flex align-items-center justify-content-between">
+				<div class="card-header bg-transparent border-0 fw-semibold d-flex align-items-center justify-content-between">
 					کلمات کلیدی
 					<span class="small text-muted">۱۵ مورد برتر</span>
 				</div>
@@ -100,7 +116,7 @@
 	<div class="row g-3 mt-1">
 		<div class="col-12">
 			<div class="card shadow-sm border-0 rounded-4">
-				<div class="card-header bg-white border-0">
+				<div class="card-header bg-transparent border-0">
 					<div class="d-flex flex-wrap align-items-center gap-2">
 						<div class="input-group input-group-sm w-auto">
 							<span class="input-group-text bg-light"><i class="fas fa-hashtag"></i></span>
@@ -119,19 +135,19 @@
 					</div>
 				</div>
 
-				<div class="card-body p-3" *ngIf="loadingTable(); else tableOrEmpty">
+				<div class="bg-transparent card-body p-3" *ngIf="loadingTable(); else tableOrEmpty">
 					<ws-skeleton [count]="5"></ws-skeleton>
 				</div>
 
 				<ng-template #tableOrEmpty>
-					<div *ngIf="filteredRows().length===0; else tableBlock" class="p-4">
+					<div *ngIf="filteredRows().length===0; else tableBlock" class="">
 						<ws-empty-state icon="fas fa-filter"
 						                title="نتیجه‌ای یافت نشد"
 						                subtitle="فیلترها را تغییر دهید و دوباره تلاش کنید">
 						</ws-empty-state>
 					</div>
 					<ng-template #tableBlock>
-						<div class="card-body p-0 d-none d-md-block">
+						<div class="bg-transparent card-body p-0 d-none d-md-block">
 							<p-table
 								[value]="filteredRows()"
 								[paginator]="true" [rows]="10"
@@ -175,7 +191,8 @@
 												[value]="r.sentiment"></p-tag>
 										</td>
 										<td class="text-end">
-											<button pButton icon="fas fa-eye" class="btn btn-sm btn-outline-secondary"
+											<button pButton icon="fas fa-eye"
+											        class="btn btn-sm p-button-text  btn-outline-secondary"
 											        (click)="viewPost(r)"></button>
 										</td>
 									</tr>
@@ -184,7 +201,7 @@
 						</div>
 
 						<!-- Mobile list -->
-						<div class="card-body d-md-none">
+						<div class="bg-transparent card-body d-md-none">
 							<div class="row g-3">
 								<div class="col-12" *ngFor="let r of filteredRows() | slice:0:10">
 									<div class="border rounded-3 p-3">
@@ -220,8 +237,6 @@
 		</div>
 	</div>
 </div>
-
-<!-- OFFCANVAS FILTERS (Bootstrap) -->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasFilters">
 	<div class="offcanvas-header">
 		<h5 class="offcanvas-title">فیلترها</h5>
@@ -258,8 +273,6 @@
 		</div>
 	</div>
 </div>
-
-<!-- POST DIALOG -->
 <p-dialog
 	[visible]="showPost()"
 	(visibleChange)="showPost.set($event)"
@@ -289,8 +302,5 @@
 				<span><i class="fas fa-share-alt ms-1"></i>{{ selectedPost?.shares }}</span>
 			</div>
 		</div>
-	</ng-template>
-	<ng-template pTemplate="footer">
-		<button pButton label="بستن" icon="fas fa-times" class="btn btn-link" (click)="showPost.set(false)"></button>
 	</ng-template>
 </p-dialog>

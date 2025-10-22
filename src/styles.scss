@@ -37,3 +37,54 @@
 .w-full {
 	width: 100%;
 }
+
+/* Glass ONLY for cards (PrimeNG & Bootstrap) */
+body {
+	background: linear-gradient(120deg, #efefef, #c8c8c8);
+	background-attachment: fixed;
+}
+
+.p-card,
+.card {
+	background: rgba(255, 255, 255, 0.08) !important;
+	backdrop-filter: blur(25px) saturate(160%) !important;
+	-webkit-backdrop-filter: blur(25px) saturate(160%) !important;
+	border: 1px solid rgba(255, 255, 255, 0.15) !important;
+	border-radius: 1.5rem !important;
+	box-shadow: 0 10px 30px rgba(255, 255, 255, 0.7) !important;
+	overflow: hidden;
+	position: relative;
+}
+
+.p-card::before,
+.card::before {
+	content: "";
+	position: absolute;
+	top: -50%;
+	right: -50%;
+	width: 140%;
+	height: 200%;
+	background: conic-gradient(
+			from 180deg at 50% 50%,
+			rgba(0, 0, 0, 0.1),
+			transparent,
+			rgba(0, 0, 0, 0.1)
+	);
+	transform: rotate(25deg);
+	z-index: 0;
+}
+
+.p-card *,
+.card * {
+	position: relative;
+	z-index: 2;
+}
+* {
+	color: rgba(40, 40, 40, 0.7);
+
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+	color: rgba(50, 50, 50, 0.8);
+}

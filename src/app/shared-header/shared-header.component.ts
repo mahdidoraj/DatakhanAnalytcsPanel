@@ -27,17 +27,17 @@ export class SharedHeaderComponent implements OnInit {
 				{
 					label: '👤 Account',
 					items: [
-						{ label: 'Profile', icon: 'pi pi-user', routerLink: '/account/profile' },
-						{ label: 'Settings', icon: 'pi pi-cog', routerLink: '/account/settings' },
+						{ label: 'Profile', icon: 'fas fa-user', routerLink: '/account/profile' },
+						{ label: 'Settings', icon: 'fas fa-cog', routerLink: '/account/settings' },
 						{ separator: true },
-						{ label: 'Logout', icon: 'pi pi-sign-out', command: () => this.logout() }
+						{ label: 'Logout', icon: 'fas fa-sign-out', command: () => this.logout() }
 					]
 				},
 				{
 					label: '⭐ Plans',
 					items: [
-						{ label: 'Pro', icon: 'pi pi-star', routerLink: '/plans/pro' },
-						{ label: 'Enterprise', icon: 'pi pi-briefcase', routerLink: '/plans/enterprise' }
+						{ label: 'Pro', icon: 'fas fa-star', routerLink: '/plans/pro' },
+						{ label: 'Enterprise', icon: 'fas fa-briefcase', routerLink: '/plans/enterprise' }
 					]
 				}
 			];
@@ -51,15 +51,15 @@ export class SharedHeaderComponent implements OnInit {
 				{
 					label: '👤 Account',
 					items: [
-						{ label: 'Login', icon: 'pi pi-sign-in', routerLink: '/auth/login' },
-						{ label: 'Register', icon: 'pi pi-user-plus', routerLink: '/auth/register' }
+						{ label: 'Login', icon: 'fas fa-sign-in', routerLink: '/auth/login' },
+						{ label: 'Register', icon: 'fas fa-user-plus', routerLink: '/auth/register' }
 					]
 				},
 				{
 					label: '⭐ Plans',
 					items: [
-						{ label: 'Pro', icon: 'pi pi-star', routerLink: '/plans/pro' },
-						{ label: 'Enterprise', icon: 'pi pi-briefcase', routerLink: '/plans/enterprise' }
+						{ label: 'Pro', icon: 'fas fa-star', routerLink: '/plans/pro' },
+						{ label: 'Enterprise', icon: 'fas fa-briefcase', routerLink: '/plans/enterprise' }
 					]
 				}
 			];

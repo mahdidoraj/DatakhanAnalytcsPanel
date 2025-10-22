@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import Aura from '@primeng/themes/aura';
 import { providePrimeNG } from 'primeng/config';
+import { ShellModule } from './shell/shell.module';
 
 /* WS UI Module */
 import { WsUiModule } from './ws-ui/ws-ui.module';
@@ -24,6 +25,7 @@ import { SharedHeaderModule } from './shared-header/shared-header.module';
 		AppRoutingModule,
 		SharedAllModule,
 		SharedHeaderModule,
+		ShellModule,
 	],
 	providers: [
 		provideAnimationsAsync(),

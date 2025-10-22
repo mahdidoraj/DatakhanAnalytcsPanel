@@ -4,13 +4,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Avatar } from 'primeng/avatar';
 
 import { ChipModule } from 'primeng/chip';
+import { Drawer } from 'primeng/drawer';
 import { DropdownModule } from 'primeng/dropdown';
 import { FloatLabel } from 'primeng/floatlabel';
 import { InputOtp } from 'primeng/inputotp';
+import { Menubar } from 'primeng/menubar';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { PanelMenu } from 'primeng/panelmenu';
 import { PasswordDirective } from 'primeng/password';
 import { ProgressBar } from 'primeng/progressbar';
 import { Skeleton } from 'primeng/skeleton';
@@ -32,24 +35,10 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 @NgModule({
 	declarations: [],
 	imports: [
-		CommonModule, ReactiveFormsModule, FormsModule,
-		DropdownModule, MultiSelectModule, CalendarModule, InputTextModule, ButtonModule,
-		TableModule, TooltipModule, DialogModule, SidebarModule, CardModule, TagModule,
-		ToggleButtonModule, ChipModule, InputSwitchModule, DividerModule, BadgeModule,
-		ProgressSpinnerModule, NgApexchartsModule,
-		Toolbar, ProgressBar, TabPanel, Avatar, TabView, Skeleton,
-		InputOtp,
-		FloatLabel, PasswordDirective,
+		CommonModule, ReactiveFormsModule, FormsModule, DropdownModule, MultiSelectModule, CalendarModule, InputTextModule, ButtonModule, TableModule, TooltipModule, DialogModule, SidebarModule, CardModule, TagModule, ToggleButtonModule, ChipModule, InputSwitchModule, DividerModule, BadgeModule, ProgressSpinnerModule, NgApexchartsModule, Toolbar, ProgressBar, TabPanel, Avatar, TabView, Skeleton, InputOtp, FloatLabel, PasswordDirective, PanelMenu, Menubar, Drawer,
 	],
 	exports: [
-		ReactiveFormsModule, FormsModule,
-		DropdownModule, MultiSelectModule, CalendarModule, InputTextModule, ButtonModule,
-		TableModule, TooltipModule, DialogModule, SidebarModule, CardModule, TagModule,
-		ToggleButtonModule, ChipModule, InputSwitchModule, DividerModule, BadgeModule,
-		ProgressSpinnerModule, NgApexchartsModule,
-		Toolbar, ProgressBar, TabPanel, Avatar, TabView, Skeleton,
-		FloatLabel,
-		InputOtp, PasswordDirective,
+		ReactiveFormsModule, FormsModule, DropdownModule, MultiSelectModule, CalendarModule, InputTextModule, ButtonModule, TableModule, TooltipModule, DialogModule, SidebarModule, CardModule, TagModule, ToggleButtonModule, ChipModule, InputSwitchModule, DividerModule, BadgeModule, ProgressSpinnerModule, NgApexchartsModule, Toolbar, ProgressBar, TabPanel, Avatar, TabView, Skeleton, InputOtp, FloatLabel, PasswordDirective, PanelMenu, Menubar, Drawer,
 	],
 })
 export class SharedAllModule {
