@@ -1,0 +1,52 @@
+/* src/app/layout/parts/header.component.scss */
+.header {
+	padding: 10px 0;
+	background: transparent;
+}
+
+.header__wrap {
+	border-radius: var(--radius);
+}
+
+.glass-menubar {
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	background: linear-gradient(180deg, rgba(255, 255, 255, .85), rgba(255, 255, 255, .70));
+	border-radius: var(--radius);
+	box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+	border: none !important;
+
+	.p-menubar {
+		background: transparent !important;
+		border: none !important;
+	}
+
+	.p-menuitem-link {
+		border-radius: 10px;
+	}
+}
+
+.brand {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
+	color: inherit;
+}
+
+.brand__logo {
+	width: 28px;
+	height: 28px;
+	object-fit: contain;
+}
+
+.brand__name {
+	font-weight: 700;
+	font-size: 1rem;
+}
+
+.actions {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}

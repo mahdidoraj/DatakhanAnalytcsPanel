@@ -1,0 +1,25 @@
+<!-- src/app/layout/parts/header.component.html -->
+<header class="header sticky-top">
+	<div class="container-xxl px-3 px-md-4">
+		<div class="header__wrap">
+			<p-menubar class="glass-menubar w-100" [model]="menuItems"
+			           [style]="{'--p-menubar-background':'transparent','--p-menubar-border-color':'transparent'}">
+				<ng-template pTemplate="start">
+					<a class="brand" href="#">
+						<img src="/assets/logo.svg" class="brand__logo" alt="logo">
+						<span class="brand__name">Social Analytics</span>
+					</a>
+				</ng-template>
+				<ng-template pTemplate="end">
+					<div class="actions">
+						<p-badge value="Free" severity="warn"></p-badge>
+						<button pButton class="p-button-text p-button-rounded" (click)="openFilters()"
+						        icon="fas fa-search"></button>
+						<button pButton class="p-button-text p-button-rounded" icon="fas fa-bell"></button>
+						<p-avatar shape="circle" icon="fas fa-user"></p-avatar>
+					</div>
+				</ng-template>
+			</p-menubar>
+		</div>
+	</div>
+</header>

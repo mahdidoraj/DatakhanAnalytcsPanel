@@ -1,0 +1,48 @@
+<!-- shell-sidebar.component.html -->
+<p-drawer
+	[visible]="visible()"
+	(visibleChange)="onVisibleChange($event)"
+	header="فیلترها"
+	position="right"
+	[appendTo]="'body'"
+	[modal]="true"
+	[blockScroll]="true"
+	[autoZIndex]="true"
+	[baseZIndex]="4000"
+	[style]="{ width: 'min(380px, 92vw)'}">
+	<p>شما می توانید تمامی تغییرات مورد نیاز خود را بر روی پنل از این قسمت اعمال کنید.</p>
+	<div class="drawer-content">
+		<form class="d-flex flex-column gap-3" [formGroup]="filters" dir="rtl">
+			<div>
+				<label class="form-label">زبان</label>
+				<p-dropdown [options]="langs" formControlName="lang" styleClass="w-100"></p-dropdown>
+			</div>
+			<div>
+				<label class="form-label">شبکه‌ها</label>
+				<p-multiSelect [options]="networks" formControlName="networks" defaultLabel="انتخاب شبکه‌ها"
+				               styleClass="w-100"></p-multiSelect>
+			</div>
+			<div>
+				<label class="form-label">احساس</label>
+				<p-multiSelect [options]="sentiments" formControlName="sentiments" defaultLabel="همه"
+				               styleClass="w-100"></p-multiSelect>
+			</div>
+			<div>
+				<label class="form-label">نوع مدیا</label>
+				<p-multiSelect [options]="media" formControlName="media" defaultLabel="نوع مدیا"
+				               styleClass="w-100"></p-multiSelect>
+			</div>
+			<div>
+				<label class="form-label">بازه زمانی</label>
+				<p-calendar [selectionMode]="'range'" [showIcon]="true" formControlName="range" styleClass="w-100"></p-calendar>
+			</div>
+
+			<div class="d-flex gap-2 mt-2">
+				<button pButton class="btn btn-primary w-100" icon="fas fa-check" label="اعمال" type="button"
+				        (click)="apply()"></button>
+				<button pButton class="btn btn-outline-secondary w-100" icon="fas fa-refresh" label="ریست" type="button"
+				        (click)="reset()"></button>
+			</div>
+		</form>
+	</div>
+</p-drawer>
