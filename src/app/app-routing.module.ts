@@ -5,10 +5,17 @@ import { ShellComponent } from './shell/shell.component';
 const routes: Routes = [
 	{
 		path: '',
+		loadChildren: () => import('./home-landing/home-landing.module').then(m => m.HomeLandingModule),
+	},
+	{
+		path: 'dashboard',
 		component: ShellComponent,
 		loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
 	},
-	{path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
+	{
+		path: 'auth',
+		loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+	},
 ];
 
 @NgModule({
