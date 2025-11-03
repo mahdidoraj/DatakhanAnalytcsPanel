@@ -1,0 +1,46 @@
+<section id="hero" class="position-relative pt-5">
+	<p-toast></p-toast>
+	<div class="container-xl d-flex flex-column flex-lg-row align-items-center gap-4">
+		<div class="flex-grow-1" revealOnScroll>
+			<h1 class="mb-3">تحلیل هوشمند شبکه‌های اجتماعی با <span class="text-gold">دقت خوانا</span></h1>
+			<p class="text-secondary maxw-720">دیتا خوانا، داده‌های X، اینستاگرام و فیسبوک را جمع‌آوری، پاکسازی و به بینش‌های عملی تبدیل می‌کند.</p>
+			<div class="d-flex gap-2 my-3">
+				<span class="p-chip"><i class="fa-brands fa-x-twitter me-2"></i>X</span>
+				<span class="p-chip"><i class="fa-brands fa-instagram me-2"></i>Instagram</span>
+				<span class="p-chip"><i class="fa-brands fa-facebook-f me-2"></i>Facebook</span>
+			</div>
+			<div class="d-flex gap-2 flex-wrap mt-3">
+				<button pButton label="شروع رایگان" class="btn-gold" (click)="scrollTo('pricing')" trackEvent="hero_cta_click"></button>
+				<button pButton label="درخواست دمو" class="p-button-outlined btn-outline-gold" (click)="openDemo()" trackEvent="demo_open"></button>
+			</div>
+
+			<form class="glass round-12 p-3 mt-4" [formGroup]="form" (ngSubmit)="submit()" aria-live="polite">
+				<div class="row g-3 align-items-end">
+					<div class="col-12 col-md-5">
+						<label class="form-label">ایمیل</label>
+						<input pInputText formControlName="email" type="email" placeholder="you@company.com" [class.is-invalid]="invalid('email')" />
+						<div class="text-danger mt-1" *ngIf="invalid('email')">ایمیل معتبر نیست</div>
+					</div>
+					<div class="col-12 col-md-4">
+						<label class="form-label">حوزه کاری</label>
+						<p-dropdown [options]="industries" formControlName="industry" optionLabel="label" placeholder="انتخاب..."></p-dropdown>
+					</div>
+					<div class="col-12 col-md-3 d-flex gap-2">
+						<div class="form-check mt-4">
+							<p-checkbox inputId="agree" binary="true" formControlName="agree"></p-checkbox>
+							<label for="agree" class="ms-2">توافق قوانین</label>
+						</div>
+						<button pButton type="submit" label="ثبت" class="btn-gold mt-3" [disabled]="form.invalid" trackEvent="hero_cta_click"></button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div class="flex-grow-1 d-flex justify-content-center" aria-hidden="true">
+			<div class="glass round-16 shadow-soft p-2" style="border:1px solid var(--border)">
+				<img [src]="imgLoaded()? '/assets/animate.webm' : ''" width="520" height="360" class="round-16" alt="گراف شبکه داده"/>
+				<p-skeleton *ngIf="!imgLoaded()" width="520px" height="360px" styleClass="round-16"></p-skeleton>
+			</div>
+		</div>
+	</div>
+</section>

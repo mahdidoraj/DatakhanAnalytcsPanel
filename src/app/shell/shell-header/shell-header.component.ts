@@ -1,77 +1,28 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, HostListener, inject, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { DrawerService } from '../drawer.service';
+import { DialogService } from 'primeng/dynamicdialog';
+import { ShellDemoDialogComponent } from '../shell-demo-dialog/shell-demo-dialog.component';
 
 @Component({
 	selector: 'app-shell-header',
 	standalone: false,
 	templateUrl: './shell-header.component.html',
 	styleUrl: './shell-header.component.scss',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ShellHeaderComponent implements OnInit {
-	private drawer = inject(DrawerService);
-	isLoggedIn = false; // اینو بعداً از authService می‌گیری
+export class ShellHeaderComponent {
+	@HostBinding('class.sticky-top') sticky = true;
+	scrolled=false;
+	private dialog = inject(DialogService);
 
-	menuItems: MenuItem[] = [];
+	items: MenuItem[] = [
+		{ label:'ویژگی‌ها', command:()=>this.scrollTo('features') },
+		{ label:'نمونه تحلیل', command:()=>this.scrollTo('insights') },
+		{ label:'قیمت‌گذاری', command:()=>this.scrollTo('pricing') },
+		{ label:'سوالات', command:()=>this.scrollTo('faq') }
+	];
 
-	ngOnInit(): void {
-		this.buildMenu();
-	}
-	openFilters(){ this.drawer.open(); }
-
-	buildMenu() {
-		if (this.isLoggedIn) {
-			// ✅ منو وقتی کاربر لاگین کرده
-			this.menuItems = [
-				{
-					label: '📊 Dashboard',
-					routerLink: '/',
-				},
-				{
-					label: '👤 Account',
-					items: [
-						{label: 'Profile', icon: 'fas fa-user', routerLink: '/account/profile'},
-						{label: 'Settings', icon: 'fas fa-cog', routerLink: '/account/settings'},
-						{separator: true},
-						{label: 'Logout', icon: 'fas fa-sign-out', command: () => this.logout()},
-					],
-				},
-				{
-					label: '⭐ Plans',
-					items: [
-						{label: 'Pro', icon: 'fas fa-star', routerLink: '/plans/pro'},
-						{label: 'Enterprise', icon: 'fas fa-briefcase', routerLink: '/plans/enterprise'},
-					],
-				},
-			];
-		} else {
-			// ✅ منو وقتی کاربر لاگین نکرده
-			this.menuItems = [
-				{
-					label: '📊 Dashboard',
-					routerLink: '/',
-				},
-				{
-					label: '👤 Account',
-					items: [
-						{label: 'Login', icon: 'fas fa-sign-in', routerLink: '/auth/login'},
-						{label: 'Register', icon: 'fas fa-user-plus', routerLink: '/auth/register'},
-					],
-				},
-				{
-					label: '⭐ Plans',
-					items: [
-						{label: 'Pro', icon: 'fas fa-star', routerLink: '/plans/pro'},
-						{label: 'Enterprise', icon: 'fas fa-briefcase', routerLink: '/plans/enterprise'},
-					],
-				},
-			];
-		}
-	}
-
-	logout() {
-		// TODO: بعداً به auth service وصلش کن
-		this.isLoggedIn = false;
-		this.buildMenu();
-	}
+	@HostListener('window:scroll') onScroll(){ this.scrolled = (window.scrollY||0) > 12; }
+	openDemo(){ this.dialog.open(ShellDemoDialogComponent,{header:'درخواست دمو', width:'600px', styleClass:'glass round-12'}); }
+	scrollTo(id:string){ document.getElementById(id)?.scrollIntoView({behavior:'smooth', block:'start'}); }
 }

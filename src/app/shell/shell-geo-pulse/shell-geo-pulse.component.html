@@ -1,0 +1,12 @@
+<section revealOnScroll>
+	<div class="container-xl">
+		<h2 class="mb-3">پراکندگی جغرافیایی گفتگوها</h2>
+		<p-card class="glass card-glass">
+			<div class="map-wrap position-relative">
+				<div #map class="w-100 h-100"></div>
+				<p-skeleton *ngIf="!ready()" class="position-absolute top-0 start-0 w-100 h-100" styleClass="round-16"></p-skeleton>
+			</div>
+			<small class="text-secondary d-block mt-2">تفکیک کشور/شهر در نسخه کامل</small>
+		</p-card>
+	</div>
+</section>

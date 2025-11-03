@@ -1,0 +1,14 @@
+<section revealOnScroll>
+	<div class="container-xl">
+		<h2 class="mb-3">چگونه کار می‌کند؟</h2>
+		<ol class="list-unstyled position-relative ps-4">
+			<li class="mb-3 d-flex gap-3 align-items-start" *ngFor="let s of steps; let i = index">
+				<span class="grad-gold d-inline-flex align-items-center justify-content-center rounded-circle text-dark fw-bold" style="width:36px;height:36px">{{i+1}}</span>
+				<div>
+					<h3 class="m-0">{{s.title}}</h3>
+					<p class="text-secondary m-0">{{s.desc}}</p>
+				</div>
+			</li>
+		</ol>
+	</div>
+</section>

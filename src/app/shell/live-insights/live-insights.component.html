@@ -1,0 +1,50 @@
+<section id="insights" revealOnScroll>
+	<div class="container-xl">
+		<h2 class="mb-4">نمای لحظه‌ای شبکه‌های شما</h2>
+
+		<div class="d-flex flex-wrap gap-3 mb-4">
+			<div class="glass round-12 p-3 kpi text-center">
+				<div class="text-secondary">پست‌های پردازش‌شده</div>
+				<div class="fs-3 fw-bold"><span countUp [countTo]="kpis().posts"></span></div>
+			</div>
+			<div class="glass round-12 p-3 kpi text-center">
+				<div class="text-secondary">منشن‌ها</div>
+				<div class="fs-3 fw-bold"><span countUp [countTo]="kpis().mentions"></span></div>
+			</div>
+			<div class="glass round-12 p-3 kpi text-center">
+				<div class="text-secondary">میانگین احساس</div>
+				<div class="fs-3 fw-bold"><span countUp [countTo]="kpis().sentiment"></span>%</div>
+			</div>
+		</div>
+
+		<div class="row g-3">
+			<div class="col-12 col-lg-8">
+				<p-card class="glass card-glass h-100">
+					<ng-template pTemplate="header"><h3 class="m-0">روند منشن‌ها (۷ روزه)</h3></ng-template>
+					<div *ngIf="!loaded(); else area">
+						<p-skeleton height="260px" styleClass="round-12"></p-skeleton>
+					</div>
+					<ng-template #area>
+<!--						<apx-chart-->
+<!--							[series]="areaSeries" [chart]="areaChart" [xaxis]="xAxis"-->
+<!--							[fill]="fill" [dataLabels]="dataLabels" [stroke]="stroke"-->
+<!--							[tooltip]="tooltip" [legend]="legend" ></apx-chart>-->
+					</ng-template>
+				</p-card>
+			</div>
+			<div class="col-12 col-lg-4">
+				<p-card class="glass card-glass h-100">
+					<ng-template pTemplate="header"><h3 class="m-0">سهم شبکه‌ها</h3></ng-template>
+					<div *ngIf="!loaded(); else donut">
+						<p-skeleton height="260px" styleClass="round-12"></p-skeleton>
+					</div>
+					<ng-template #donut>
+<!--						<apx-chart-->
+<!--							[series]="donutSeries" [chart]="donutChart" [labels]="['X','Instagram','Facebook']"-->
+<!--							[responsive]="donutResponsive" [plotOptions]="donutOptions" ></apx-chart>-->
+					</ng-template>
+				</p-card>
+			</div>
+		</div>
+	</div>
+</section>

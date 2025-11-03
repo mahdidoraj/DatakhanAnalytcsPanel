@@ -1,0 +1,41 @@
+<section revealOnScroll>
+	<div class="container-xl">
+		<h2 class="mb-3">نمونه داده پاکسازی‌شده</h2>
+
+		<div class="glass round-12 p-3 mb-2 d-flex flex-wrap gap-2 align-items-center">
+			<input pInputText type="text" placeholder="جستجو..." class="flex-grow-1" trackEvent="table_filter" />
+			<p-dropdown [options]="networks" [(ngModel)]="selectedNetwork" placeholder="شبکه" (onChange)="onFilter()"></p-dropdown>
+		</div>
+
+		<p-table *ngIf="loaded(); else loading" [value]="filtered()" [paginator]="true" [rows]="5" [rowHover]="true" [responsiveLayout]="'scroll'">
+			<ng-template pTemplate="header">
+				<tr>
+					<th pSortableColumn="network">شبکه <p-sortIcon field="network" /></th>
+					<th pSortableColumn="date">تاریخ <p-sortIcon field="date" /></th>
+					<th>متن</th>
+					<th pSortableColumn="sentiment">احساس <p-sortIcon field="sentiment" /></th>
+					<th pSortableColumn="engagement">تعامل <p-sortIcon field="engagement" /></th>
+				</tr>
+			</ng-template>
+			<ng-template pTemplate="body" let-r>
+				<tr>
+					<td><span class="p-chip"><i [class]="icon(r.network) + ' me-2'"></i>{{r.network}}</span></td>
+					<td>{{r.date}}</td>
+					<td style="max-width:420px">{{r.text}}</td>
+					<td><span class="p-badge" [ngClass]="badgeClass(r.sentiment)">{{r.sentiment}}</span></td>
+					<td>{{r.engagement | number}}</td>
+				</tr>
+			</ng-template>
+			<ng-template pTemplate="emptymessage">
+				<tr><td colspan="5" class="text-center text-secondary">داده‌ای یافت نشد</td></tr>
+			</ng-template>
+		</p-table>
+
+		<ng-template #loading>
+			<div class="row g-2">
+				<div class="col-12"><p-skeleton height="44px" class="round-12"></p-skeleton></div>
+				<div class="col-12" *ngFor="let i of [1,2,3,4,5]"><p-skeleton height="48px" class="round-12"></p-skeleton></div>
+			</div>
+		</ng-template>
+	</div>
+</section>

@@ -1,0 +1,30 @@
+<p-toast></p-toast>
+<form class="d-grid gap-2" [formGroup]="form" (ngSubmit)="submit()" style="grid-template-columns:1fr 1fr">
+	<div class="col-span-1">
+		<label class="form-label">نام</label>
+		<input pInputText formControlName="name" required />
+	</div>
+	<div class="col-span-1">
+		<label class="form-label">ایمیل</label>
+		<input pInputText formControlName="email" type="email" required />
+	</div>
+	<div class="col-span-1">
+		<label class="form-label">شرکت</label>
+		<input pInputText formControlName="company" />
+	</div>
+	<div class="col-span-1">
+		<label class="form-label">اندازه تیم</label>
+		<p-dropdown [options]="sizes" formControlName="size" placeholder="انتخاب..."></p-dropdown>
+	</div>
+	<div class="col-span-2">
+		<label class="form-label">لینک پروفایل اجتماعی</label>
+		<input pInputText formControlName="profile" placeholder="https://..." />
+	</div>
+	<div class="col-span-2">
+		<label class="form-label">توضیح (حداکثر ۵۰۰)</label>
+		<textarea pInputTextarea formControlName="note" rows="3" maxlength="500"></textarea>
+	</div>
+	<div class="col-span-2 text-end">
+		<button pButton type="submit" label="ارسال" class="btn-gold" [disabled]="form.invalid"></button>
+	</div>
+</form>

@@ -1,0 +1,11 @@
+<section id="faq" revealOnScroll>
+	<div class="container-xl">
+		<h2 class="mb-3">سوالات متداول</h2>
+		<input pInputText type="text" placeholder="جستجو در سوالات..." class="mb-3 w-100" [(ngModel)]="q">
+		<p-accordion [multiple]="true">
+			<p-accordionTab *ngFor="let f of filtered()" [header]="f.q">
+				<p class="m-0 text-secondary">{{f.a}}</p>
+			</p-accordionTab>
+		</p-accordion>
+	</div>
+</section>
