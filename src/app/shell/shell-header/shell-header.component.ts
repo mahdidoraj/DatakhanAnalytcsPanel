@@ -11,18 +11,9 @@ import { ShellDemoDialogComponent } from '../shell-demo-dialog/shell-demo-dialog
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ShellHeaderComponent {
-	@HostBinding('class.sticky-top') sticky = true;
-	scrolled=false;
-	private dialog = inject(DialogService);
+	menuOpen = false;
 
-	items: MenuItem[] = [
-		{ label:'ویژگی‌ها', command:()=>this.scrollTo('features') },
-		{ label:'نمونه تحلیل', command:()=>this.scrollTo('insights') },
-		{ label:'قیمت‌گذاری', command:()=>this.scrollTo('pricing') },
-		{ label:'سوالات', command:()=>this.scrollTo('faq') }
-	];
-
-	@HostListener('window:scroll') onScroll(){ this.scrolled = (window.scrollY||0) > 12; }
-	openDemo(){ this.dialog.open(ShellDemoDialogComponent,{header:'درخواست دمو', width:'600px', styleClass:'glass round-12'}); }
-	scrollTo(id:string){ document.getElementById(id)?.scrollIntoView({behavior:'smooth', block:'start'}); }
+	toggleMenu(): void {
+		this.menuOpen = !this.menuOpen;
+	}
 }

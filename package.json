@@ -24,6 +24,7 @@
     "apexcharts": "3.54.1",
     "leaflet": "^1.9.4",
     "ng-apexcharts": "1.17.1",
+    "particles.js": "^2.0.0",
     "primeflex": "4.0.0",
     "primeicons": "^7.0.0",
     "primeng": "19.1.2",

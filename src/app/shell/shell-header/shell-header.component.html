@@ -1,19 +1,94 @@
-<header class="position-sticky top-0 w-100 header-blur" [class.header-solid]="scrolled" style="z-index:1000" role="navigation" aria-label="سرمنوی اصلی">
-	<div class="container-xl">
-		<p-menubar [model]="items">
-			<ng-template pTemplate="start">
-				<a href="#" class="d-flex align-items-center gap-2 fw-bold position-relative">
-					<span class="rounded-circle grad-gold d-inline-block" style="width:28px;height:28px"></span>
-					<span>دیتا <span class="text-gold">خوانا</span></span>
-					<span class="p-badge p-component badge-gold ms-2">بتا</span>
+<!-- shell-header.component.html -->
+<header class="shell-header">
+	<div class="container shell-header-inner">
+
+		<div class="shell-brand">
+			<a class="brand-link" [routerLink]="['/']">
+				<!--				<span class="brand-mark">-->
+				<p-avatar shape="square" size="xlarge" image="/assets/logo.webp"></p-avatar>
+				<!--				</span>-->
+				<span class="brand-text">
+					<span class="brand-title">دیتا خوانا</span>
+					<span class="brand-subtitle">Social Analytics Studio</span>
+				</span>
+			</a>
+		</div>
+
+		<nav class="shell-nav d-none d-lg-flex" aria-label="Navigation">
+			<a [routerLink]="['/']" routerLinkActive="active" class="nav-link" [routerLinkActiveOptions]="{exact:true}">
+				خانه
+			</a>
+			<a [routerLink]="['/features']" routerLinkActive="active" class="nav-link">
+				امکانات
+			</a>
+			<a [routerLink]="['/solutions']" routerLinkActive="active" class="nav-link">
+				راهکارها
+			</a>
+			<a [routerLink]="['/pricing']" routerLinkActive="active" class="nav-link">
+				قیمت‌گذاری
+			</a>
+			<a [routerLink]="['/docs']" routerLinkActive="active" class="nav-link">
+				داکیومنت
+			</a>
+		</nav>
+
+		<div class="shell-actions d-none d-lg-flex">
+			<button pButton type="button" label="ورود" class="p-button-text header-login"></button>
+			<button pButton type="button" label="ساخت حساب" class="header-cta"></button>
+		</div>
+
+		<button
+			pButton
+			type="button"
+			class="p-button-text p-button-rounded shell-menu-toggle d-lg-none"
+			(click)="toggleMenu()"
+			aria-label="منو">
+			<i class="pi" [ngClass]="menuOpen ? 'pi-times' : 'pi-bars'"></i>
+		</button>
+
+	</div>
+
+	<div class="shell-mobile-menu d-lg-none" [class.open]="menuOpen">
+		<div class="container-xxl">
+			<nav class="mobile-nav" aria-label="Mobile Navigation">
+				<a [routerLink]="['/']"
+				   routerLinkActive="active"
+				   [routerLinkActiveOptions]="{exact:true}"
+				   class="nav-link"
+				   (click)="toggleMenu()">
+					خانه
 				</a>
-			</ng-template>
-			<ng-template pTemplate="end">
-				<div class="d-flex align-items-center gap-2">
-					<button pButton label="شروع رایگان" class="btn-gold p-button-sm" (click)="scrollTo('pricing')" trackEvent="pricing_cta_click"></button>
-					<button pButton label="درخواست دمو" class="p-button-outlined p-button-sm btn-outline-gold" (click)="openDemo()" trackEvent="demo_open"></button>
+				<a [routerLink]="['/features']"
+				   routerLinkActive="active"
+				   class="nav-link"
+				   (click)="toggleMenu()">
+					امکانات
+				</a>
+				<a [routerLink]="['/solutions']"
+				   routerLinkActive="active"
+				   class="nav-link"
+				   (click)="toggleMenu()">
+					راهکارها
+				</a>
+				<a [routerLink]="['/pricing']"
+				   routerLinkActive="active"
+				   class="nav-link"
+				   (click)="toggleMenu()">
+					قیمت‌گذاری
+				</a>
+				<a [routerLink]="['/docs']"
+				   routerLinkActive="active"
+				   class="nav-link"
+				   (click)="toggleMenu()">
+					داکیومنت
+				</a>
+
+				<div class="mobile-actions mt-3">
+					<a pButton type="button" label="ورود" routerLink="/auth"
+					   class="p-button-text header-login w-100 mb-2"></a>
+					<a pButton type="button" label="ساخت حساب" routerLink="/auth/register" class="header-cta w-100"></a>
 				</div>
-			</ng-template>
-		</p-menubar>
+			</nav>
+		</div>
 	</div>
 </header>

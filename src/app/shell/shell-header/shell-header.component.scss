@@ -1,52 +1,189 @@
-/* src/app/layout/parts/header.component.scss */
-.header {
-	padding: 10px 0;
+/* shell-header.component.scss */
+.shell-header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	backdrop-filter: blur(16px);
 	background: transparent;
+	border-bottom: 1px solid rgba(148, 163, 184, 0.35);
 }
 
-.header__wrap {
-	border-radius: var(--radius);
+.hero-shell::before {
+	opacity: 0.35;
 }
 
-.glass-menubar {
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	background: linear-gradient(180deg, rgba(255, 255, 255, .85), rgba(255, 255, 255, .70));
-	border-radius: var(--radius);
-	box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
-	border: none !important;
-
-	.p-menubar {
-		background: transparent !important;
-		border: none !important;
-	}
-
-	.p-menuitem-link {
-		border-radius: 10px;
-	}
-}
-
-.brand {
+.shell-header-inner {
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: 0.9rem 0;
+	direction: rtl;
+}
+
+/* Brand */
+.shell-brand .brand-link {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
 	text-decoration: none;
+}
+
+.brand-mark {
+	width: 40px;
+	height: 40px;
+	border-radius: 999px;
+	background: radial-gradient(circle at 30% 0, #fbbf24, #f97316);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #020617;
+	box-shadow: 0 12px 24px rgba(15, 23, 42, 0.85);
+}
+
+.brand-mark i {
+	font-size: 1.1rem;
+}
+
+.brand-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.brand-title {
+	font-weight: bolder;
+	font-size: 1.1rem;
+	color: #000000;
+	letter-spacing: -0.03em;
+}
+
+.brand-subtitle {
+	font-size: 0.72rem;
+	color: #fbbf24;
+}
+
+/* Desktop nav */
+.shell-nav {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.shell-nav .nav-link {
+	position: relative;
+	font-size: 0.92rem;
+	font-weight: 500;
+	color: #1a1503;
+	text-decoration: none;
+	padding-block: 0.2rem;
+	transition: color 0.2s ease;
+}
+
+.shell-nav .nav-link::after {
+	content: "";
+	position: absolute;
+	inset-inline-start: 0;
+	inset-block-end: -0.25rem;
+	width: 0;
+	height: 2px;
+	border-radius: 999px;
+	background: linear-gradient(90deg, #fbbf24, #f97316);
+	transition: width 0.2s ease;
+}
+
+.shell-nav .nav-link:hover {
+	color: #f9731640;
+}
+
+.shell-nav .nav-link.active {
+	color: #fbbf24;
+}
+
+.shell-nav .nav-link.active::after,
+.shell-nav .nav-link:hover::after {
+	width: 100%;
+}
+
+/* Actions */
+.shell-actions {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.header-login.p-button {
+	color: #f97316;
+	padding-inline: 0.4rem;
+}
+
+.header-login.p-button .p-button-label {
+	font-size: 0.85rem;
+}
+
+.header-cta.p-button {
+	background: linear-gradient(135deg, #facc6b, #f97316);
+	border-radius: 999px;
+	border: none;
+	padding: 0.45rem 1.4rem;
+	font-size: 0.9rem;
+	font-weight: 700;
+	color: white;
+	box-shadow: 0 12px 26px rgba(15, 23, 42, 0.85);
+}
+
+.header-cta.p-button .p-button-label {
 	color: inherit;
 }
 
-.brand__logo {
-	width: 28px;
-	height: 28px;
-	object-fit: contain;
+/* Menu toggle (mobile) */
+.shell-menu-toggle {
+	color: #f9731640;
+	padding: 0.25rem 0.4rem;
 }
 
-.brand__name {
-	font-weight: 700;
-	font-size: 1rem;
+.shell-menu-toggle .pi {
+	font-size: 1.35rem;
 }
 
-.actions {
+/* Mobile menu */
+.shell-mobile-menu {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.25s ease;
+	background: radial-gradient(circle at top, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.96));
+	border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.shell-mobile-menu.open {
+	max-height: 320px;
+}
+
+.mobile-nav {
+	padding: 0.75rem 0 1rem;
 	display: flex;
-	align-items: center;
-	gap: 6px;
+	flex-direction: column;
+	gap: 0.35rem;
+	direction: rtl;
+}
+
+.mobile-nav .nav-link {
+	font-size: 0.94rem;
+	padding: 0.4rem 0;
+	color: #e5e7eb;
+	text-decoration: none;
+}
+
+.mobile-nav .nav-link.active {
+	color: #facc6b;
+}
+
+.mobile-actions .header-login.p-button {
+	justify-content: center;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+	.shell-header-inner {
+		padding-block: 0.7rem;
+	}
 }

@@ -1,45 +1,189 @@
-<section id="hero" class="position-relative pt-5">
+<section id="hero" class="hero-shell position-relative">
 	<p-toast></p-toast>
-	<div class="container-xl d-flex flex-column flex-lg-row align-items-center gap-4">
-		<div class="flex-grow-1" revealOnScroll>
-			<h1 class="mb-3">تحلیل هوشمند شبکه‌های اجتماعی با <span class="text-gold">دقت خوانا</span></h1>
-			<p class="text-secondary maxw-720">دیتا خوانا، داده‌های X، اینستاگرام و فیسبوک را جمع‌آوری، پاکسازی و به بینش‌های عملی تبدیل می‌کند.</p>
-			<div class="d-flex gap-2 my-3">
-				<span class="p-chip"><i class="fa-brands fa-x-twitter me-2"></i>X</span>
-				<span class="p-chip"><i class="fa-brands fa-instagram me-2"></i>Instagram</span>
-				<span class="p-chip"><i class="fa-brands fa-facebook-f me-2"></i>Facebook</span>
-			</div>
-			<div class="d-flex gap-2 flex-wrap mt-3">
-				<button pButton label="شروع رایگان" class="btn-gold" (click)="scrollTo('pricing')" trackEvent="hero_cta_click"></button>
-				<button pButton label="درخواست دمو" class="p-button-outlined btn-outline-gold" (click)="openDemo()" trackEvent="demo_open"></button>
-			</div>
 
-			<form class="glass round-12 p-3 mt-4" [formGroup]="form" (ngSubmit)="submit()" aria-live="polite">
-				<div class="row g-3 align-items-end">
-					<div class="col-12 col-md-5">
-						<label class="form-label">ایمیل</label>
-						<input pInputText formControlName="email" type="email" placeholder="you@company.com" [class.is-invalid]="invalid('email')" />
-						<div class="text-danger mt-1" *ngIf="invalid('email')">ایمیل معتبر نیست</div>
-					</div>
-					<div class="col-12 col-md-4">
-						<label class="form-label">حوزه کاری</label>
-						<p-dropdown [options]="industries" formControlName="industry" optionLabel="label" placeholder="انتخاب..."></p-dropdown>
-					</div>
-					<div class="col-12 col-md-3 d-flex gap-2">
-						<div class="form-check mt-4">
-							<p-checkbox inputId="agree" binary="true" formControlName="agree"></p-checkbox>
-							<label for="agree" class="ms-2">توافق قوانین</label>
-						</div>
-						<button pButton type="submit" label="ثبت" class="btn-gold mt-3" [disabled]="form.invalid" trackEvent="hero_cta_click"></button>
-					</div>
-				</div>
-			</form>
+	<span class="hero-orbit hero-orbit-lg"></span>
+	<span class="hero-orbit hero-orbit-sm"></span>
+
+	<div class="container-xxl col-md-11">
+		<div class="d-flex pb-5">
+			<div class="hero-badge d-inline-flex mx-auto align-items-center gap-2">
+				<span class="hero-badge-dot"></span>
+				<span class="hero-badge-text">پلتفرم تحلیل شبکه‌های اجتماعی</span>
+				<span class="hero-badge-pill">نسخه حرفه‌ای</span>
+			</div>
 		</div>
 
-		<div class="flex-grow-1 d-flex justify-content-center" aria-hidden="true">
-			<div class="glass round-16 shadow-soft p-2" style="border:1px solid var(--border)">
-				<img [src]="imgLoaded()? '/assets/animate.webm' : ''" width="520" height="360" class="round-16" alt="گراف شبکه داده"/>
-				<p-skeleton *ngIf="!imgLoaded()" width="520px" height="360px" styleClass="round-16"></p-skeleton>
+		<div class="hero-grid d-flex flex-column flex-lg-row-reverse align-items-center gap-5">
+			<div class="hero-copy flex-lg-grow-1">
+				<h1 class="hero-title mb-3">
+					تحلیل عمیق
+					<span class="hero-highlight">شبکه‌های اجتماعی</span>
+					برای تیم‌های جدی
+				</h1>
+
+				<p class="hero-subtitle mb-3">
+					دیتا خوانا، داده‌های X، اینستاگرام و فیسبوک را در مقیاس بالا جمع‌آوری کرده،
+					نویز را حذف می‌کند و برای شما به داشبوردهای خوانا و قابل‌اقدام تبدیل می‌کند.
+				</p>
+
+				<div class="hero-chips d-flex flex-wrap gap-2 my-3">
+					<span class="p-chip hero-chip">
+						<i class="fa-brands fa-x-twitter ms-1"></i>
+					Insights	X
+					</span>
+					<span class="p-chip hero-chip">
+						<i class="fa-brands fa-instagram ms-1"></i>
+						Instagram Insights
+					</span>
+					<span class="p-chip hero-chip">
+						<i class="fa-brands fa-facebook-f ms-1"></i>
+						Facebook Intelligence
+					</span>
+				</div>
+
+				<div class="hero-actions d-flex flex-wrap gap-2 mt-3 mb-4">
+					<!--					<button-->
+					<!--						pButton-->
+					<!--						label="شروع رایگان"-->
+					<!--						icon="pi pi-arrow-left"-->
+					<!--						iconPos="right"-->
+					<!--						class="btn-gold-primary">-->
+					<!--					</button>-->
+
+					<button
+						pButton
+						label="درخواست دمو زنده"
+						icon="fas fa-video"
+						iconPos="right"
+						class="btn-outline-gold-primary p-button-outlined">
+					</button>
+				</div>
+
+				<div class="hero-metrics d-flex flex-wrap gap-3 mb-4">
+					<div class="hero-metric">
+						<div class="hero-metric-label">افزایش میانگین تعامل</div>
+						<div class="hero-metric-value">۳۲٪</div>
+					</div>
+					<div class="hero-metric">
+						<div class="hero-metric-label">زمان به بینش</div>
+						<div class="hero-metric-value">کمتر از ۵ دقیقه</div>
+					</div>
+					<div class="hero-metric">
+						<div class="hero-metric-label">زیرساخت</div>
+						<div class="hero-metric-value">Enterprise Grade</div>
+					</div>
+				</div>
+
+				<!--				<form class="hero-form glass-panel mt-3" [formGroup]="form" (ngSubmit)="submit()">-->
+				<!--					<div class="row g-3 align-items-end">-->
+
+				<!--						<div class="col-12 col-md-5">-->
+				<!--							<label class="form-label mb-1">ایمیل کاری</label>-->
+				<!--							<input-->
+				<!--								pInputText-->
+				<!--								formControlName="email"-->
+				<!--								type="email"-->
+				<!--								placeholder="you@company.com"-->
+				<!--								[class.is-invalid]="invalid('email')" />-->
+				<!--							<div class="text-danger mt-1" *ngIf="invalid('email')">-->
+				<!--								ایمیل معتبر نیست-->
+				<!--							</div>-->
+				<!--						</div>-->
+
+				<!--						<div class="col-12 col-md-4">-->
+				<!--							<label class="form-label mb-1">حوزه فعالیت</label>-->
+				<!--							<p-dropdown-->
+				<!--								[options]="industries"-->
+				<!--								formControlName="industry"-->
+				<!--								optionLabel="label"-->
+				<!--								placeholder="انتخاب کنید">-->
+				<!--							</p-dropdown>-->
+				<!--						</div>-->
+
+				<!--						<div class="col-12 col-md-3">-->
+				<!--							<div class="d-flex flex-column gap-2 mt-md-3">-->
+				<!--								<div class="d-flex align-items-center gap-2">-->
+				<!--									<p-checkbox-->
+				<!--										inputId="agree"-->
+				<!--										binary="true"-->
+				<!--										formControlName="agree">-->
+				<!--									</p-checkbox>-->
+				<!--									<label for="agree" class="hero-agree-label">-->
+				<!--										تأیید شرایط استفاده-->
+				<!--									</label>-->
+				<!--								</div>-->
+
+				<!--								<button-->
+				<!--									pButton-->
+				<!--									type="submit"-->
+				<!--									label="ثبت درخواست"-->
+				<!--									class="btn-gold-compact"-->
+				<!--									[disabled]="form.invalid">-->
+				<!--								</button>-->
+				<!--							</div>-->
+				<!--						</div>-->
+
+				<!--					</div>-->
+				<!--				</form>-->
+			</div>
+			<div class="hero-visual  flex-lg-grow-1 d-flex justify-content-center" aria-hidden="true">
+				<div class="hero-visual-inner glass-panel shadow-soft">
+
+					<div class="hero-visual-header d-flex justify-content-between align-items-center mb-3">
+						<div class="d-flex align-items-center gap-2">
+							<span class="hero-visual-dot hero-visual-dot--red"></span>
+							<span class="hero-visual-dot hero-visual-dot--amber"></span>
+							<span class="hero-visual-dot hero-visual-dot--green"></span>
+						</div>
+						<span class="hero-visual-title">Live Social Overview</span>
+					</div>
+
+					<div class="hero-visual-stats mb-3">
+						<div class="hero-visual-stat">
+							<div class="hero-visual-stat-label">Engagement</div>
+							<div class="hero-visual-stat-value">+۱۸٪</div>
+							<div class="hero-visual-stat-bar">
+								<span style="width: 78%;"></span>
+							</div>
+						</div>
+						<div class="hero-visual-stat">
+							<div class="hero-visual-stat-label">Mentions</div>
+							<div class="hero-visual-stat-value">۱۲,۴۵۰</div>
+							<div class="hero-visual-stat-bar hero-visual-stat-bar--alt">
+								<span style="width: 64%;"></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="hero-visual-body">
+						<div class="hero-visual-media round-16 overflow-hidden mb-3">
+							<img
+								[src]="imgLoaded()? '/assets/مخلخ.صثذح' : ''"
+								width="520"
+								height="360"
+								class="hero-image"
+								alt="گراف شبکه داده"/>
+							<p-skeleton
+								*ngIf="!imgLoaded()"
+								width="100%"
+								height="230px"
+								styleClass="round-16">
+							</p-skeleton>
+						</div>
+
+						<div class="hero-visual-footer d-flex justify-content-between align-items-center">
+							<div class="hero-visual-pill">
+								<i class="pi pi-bolt ms-1"></i>
+								تحلیل لحظه‌ای سیگنال‌ها
+							</div>
+							<div class="hero-visual-tag">
+								<i class="pi pi-shield ms-1"></i>
+								Ready for Teams
+							</div>
+						</div>
+					</div>
+
+				</div>
 			</div>
 		</div>
 	</div>
