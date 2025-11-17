@@ -4,7 +4,7 @@
 	<span class="hero-orbit hero-orbit-lg"></span>
 	<span class="hero-orbit hero-orbit-sm"></span>
 
-	<div class="container-xxl col-md-11">
+	<div class="container-xxl container-fluid">
 		<div class="d-flex pb-5">
 			<div class="hero-badge d-inline-flex mx-auto align-items-center gap-2">
 				<span class="hero-badge-dot"></span>
@@ -45,7 +45,7 @@
 					<!--					<button-->
 					<!--						pButton-->
 					<!--						label="شروع رایگان"-->
-					<!--						icon="pi pi-arrow-left"-->
+					<!--						icon="fas fa-arrow-left"-->
 					<!--						iconPos="right"-->
 					<!--						class="btn-gold-primary">-->
 					<!--					</button>-->
@@ -59,20 +59,6 @@
 					</button>
 				</div>
 
-				<div class="hero-metrics d-flex flex-wrap gap-3 mb-4">
-					<div class="hero-metric">
-						<div class="hero-metric-label">افزایش میانگین تعامل</div>
-						<div class="hero-metric-value">۳۲٪</div>
-					</div>
-					<div class="hero-metric">
-						<div class="hero-metric-label">زمان به بینش</div>
-						<div class="hero-metric-value">کمتر از ۵ دقیقه</div>
-					</div>
-					<div class="hero-metric">
-						<div class="hero-metric-label">زیرساخت</div>
-						<div class="hero-metric-value">Enterprise Grade</div>
-					</div>
-				</div>
 
 				<!--				<form class="hero-form glass-panel mt-3" [formGroup]="form" (ngSubmit)="submit()">-->
 				<!--					<div class="row g-3 align-items-end">-->
@@ -157,27 +143,29 @@
 
 					<div class="hero-visual-body">
 						<div class="hero-visual-media round-16 overflow-hidden mb-3">
-							<img
-								[src]="imgLoaded()? '/assets/مخلخ.صثذح' : ''"
-								width="520"
-								height="360"
-								class="hero-image"
-								alt="گراف شبکه داده"/>
-							<p-skeleton
-								*ngIf="!imgLoaded()"
-								width="100%"
-								height="230px"
-								styleClass="round-16">
-							</p-skeleton>
+							<div class="hero-metrics d-flex flex-wrap gap-3 mb-4">
+								<div class="hero-metric w-100">
+									<div class="hero-metric-label">افزایش میانگین تعامل</div>
+									<div class="hero-metric-value">۳۲٪</div>
+								</div>
+								<div class="hero-metric w-100">
+									<div class="hero-metric-label">زمان به بینش</div>
+									<div class="hero-metric-value">کمتر از 5 دقیقه</div>
+								</div>
+								<div class="hero-metric w-100">
+									<div class="hero-metric-label">زیرساخت</div>
+									<div class="hero-metric-value">Enterprise Grade</div>
+								</div>
+							</div>
 						</div>
 
 						<div class="hero-visual-footer d-flex justify-content-between align-items-center">
 							<div class="hero-visual-pill">
-								<i class="pi pi-bolt ms-1"></i>
+								<i class="fas fa-bolt ms-1"></i>
 								تحلیل لحظه‌ای سیگنال‌ها
 							</div>
 							<div class="hero-visual-tag">
-								<i class="pi pi-shield ms-1"></i>
+								<i class="fas fa-shield ms-1"></i>
 								Ready for Teams
 							</div>
 						</div>

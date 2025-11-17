@@ -1,49 +1,159 @@
-<section id="insights" revealOnScroll>
+<section id="insights" class="section-insights" revealOnScroll>
 	<div class="container-xl">
-		<h2 class="mb-4">نمای لحظه‌ای شبکه‌های شما</h2>
 
-		<div class="d-flex flex-wrap gap-3 mb-4">
-			<div class="glass round-12 p-3 kpi text-center">
-				<div class="text-secondary">پست‌های پردازش‌شده</div>
-				<div class="fs-3 fw-bold"><span countUp [countTo]="kpis().posts"></span></div>
+		<div class="insights-header d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3 mb-4">
+			<div>
+				<h2 class="mb-1">
+					نمای لحظه‌ای
+					<span class="text-gold">شبکه‌های شما</span>
+				</h2>
+				<p class="text-secondary mb-0">
+					خلاصه‌ای شفاف از وضعیت فعلی پست‌ها، منشن‌ها و احساس کاربران در یک نگاه
+				</p>
 			</div>
-			<div class="glass round-12 p-3 kpi text-center">
-				<div class="text-secondary">منشن‌ها</div>
-				<div class="fs-3 fw-bold"><span countUp [countTo]="kpis().mentions"></span></div>
+			<div class="insights-status d-inline-flex align-items-center gap-2">
+				<span class="insights-status-dot"></span>
+				<span>به‌روزرسانی خودکار بر اساس آخرین داده‌ها</span>
 			</div>
-			<div class="glass round-12 p-3 kpi text-center">
-				<div class="text-secondary">میانگین احساس</div>
-				<div class="fs-3 fw-bold"><span countUp [countTo]="kpis().sentiment"></span>%</div>
+		</div>
+
+		<div class="insights-kpis d-flex flex-wrap gap-3 mb-4">
+			<div class="feature-card round-12 p-3 kpi-card text-center">
+				<div class="kpi-label text-secondary d-flex justify-content-center align-items-center gap-1 mb-1">
+					<i class="fas fa-send"></i>
+					<span>پست‌های پردازش‌شده</span>
+				</div>
+				<div class="kpi-value fs-3 fw-bold">
+					<span countUp [countTo]="kpis().posts"></span>
+				</div>
+				<div class="kpi-foot text-success">در ۲۴ ساعت گذشته</div>
+			</div>
+
+			<div class="feature-card round-12 p-3 kpi-card text-center">
+				<div class="kpi-label text-secondary d-flex justify-content-center align-items-center gap-1 mb-1">
+					<i class="fas fa-hashtag"></i>
+					<span>منشن‌ها</span>
+				</div>
+				<div class="kpi-value fs-3 fw-bold">
+					<span countUp [countTo]="kpis().mentions"></span>
+				</div>
+				<div class="kpi-foot text-warning">پیک لحظه‌ای روی ۳ هشتگ</div>
+			</div>
+
+			<div class="feature-card round-12 p-3 kpi-card text-center">
+				<div class="kpi-label text-secondary d-flex justify-content-center align-items-center gap-1 mb-1">
+					<i class="fas fa-heart"></i>
+					<span>میانگین احساس</span>
+				</div>
+				<div class="kpi-value fs-3 fw-bold">
+					<span countUp [countTo]="kpis().sentiment"></span>%
+				</div>
+				<div class="kpi-foot text-info">بر پایه تحلیل احساسات</div>
 			</div>
 		</div>
 
 		<div class="row g-3">
 			<div class="col-12 col-lg-8">
-				<p-card class="glass card-glass h-100">
-					<ng-template pTemplate="header"><h3 class="m-0">روند منشن‌ها (۷ روزه)</h3></ng-template>
-					<div *ngIf="!loaded(); else area">
-						<p-skeleton height="260px" styleClass="round-12"></p-skeleton>
+				<div class="feature-card-without-animation h-100">
+					<div class="p-3 pb-4 pt-2">
+						<div class="d-flex justify-content-between align-items-center">
+							<h3 class="text-white m-0">جریان فعالیت اخیر</h3>
+							<span class="insights-pill">
+								<i class="fas fa-clock ms-1"></i>
+								نمای ۷ ساعت اخیر
+							</span>
+						</div>
+
+						<div class="insights-timeline mt-3">
+							<div class="insights-timeline-item">
+								<div class="insights-timeline-dot insights-timeline-dot--primary"></div>
+								<div class="insights-timeline-content">
+									<div class="insights-timeline-title">پیک تعامل در X</div>
+									<div class="insights-timeline-meta">
+										<span>۱,۲۳۰ منشن</span>
+										<span>۴۵ دقیقه پیش</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="insights-timeline-item">
+								<div class="insights-timeline-dot insights-timeline-dot--accent"></div>
+								<div class="insights-timeline-content">
+									<div class="insights-timeline-title">افزایش واکنش‌ها در Instagram</div>
+									<div class="insights-timeline-meta">
+										<span>+۲۳٪ لایک</span>
+										<span>۱ ساعت پیش</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="insights-timeline-item">
+								<div class="insights-timeline-dot"></div>
+								<div class="insights-timeline-content">
+									<div class="insights-timeline-title">ثبات منشن‌ها در Facebook</div>
+									<div class="insights-timeline-meta">
+										<span>۳۵۰ منشن پایدار</span>
+										<span>۲ ساعت پیش</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="insights-timeline-footer text-secondary">
+								نمایش خلاصه‌ای از مهم‌ترین تغییرات بدون نمودار، برای خوانایی بیشتر.
+							</div>
+						</div>
 					</div>
-					<ng-template #area>
-<!--						<apx-chart-->
-<!--							[series]="areaSeries" [chart]="areaChart" [xaxis]="xAxis"-->
-<!--							[fill]="fill" [dataLabels]="dataLabels" [stroke]="stroke"-->
-<!--							[tooltip]="tooltip" [legend]="legend" ></apx-chart>-->
-					</ng-template>
-				</p-card>
+				</div>
 			</div>
+
 			<div class="col-12 col-lg-4">
-				<p-card class="glass card-glass h-100">
-					<ng-template pTemplate="header"><h3 class="m-0">سهم شبکه‌ها</h3></ng-template>
-					<div *ngIf="!loaded(); else donut">
-						<p-skeleton height="260px" styleClass="round-12"></p-skeleton>
+				<div class="feature-card-without-animation h-100">
+					<div class="p-3 pb-4 pt-2">
+						<div class="d-flex justify-content-between align-items-center">
+							<h3 class="text-white m-0">سهم شبکه‌ها</h3>
+						</div>
+
+						<div class="insights-distribution mt-3">
+							<div class="insights-distribution-row">
+								<div class="insights-distribution-label">
+									<span class="insights-distribution-dot dot-x"></span>
+									X
+								</div>
+								<div class="insights-distribution-bar">
+									<span style="width: 48%;"></span>
+								</div>
+								<div class="insights-distribution-value">۴۸٪</div>
+							</div>
+
+							<div class="insights-distribution-row">
+								<div class="insights-distribution-label">
+									<span class="insights-distribution-dot dot-ig"></span>
+									Instagram
+								</div>
+								<div class="insights-distribution-bar">
+									<span style="width: 32%;"></span>
+								</div>
+								<div class="insights-distribution-value">۳۲٪</div>
+							</div>
+
+							<div class="insights-distribution-row">
+								<div class="insights-distribution-label">
+									<span class="insights-distribution-dot dot-fb"></span>
+									Facebook
+								</div>
+								<div class="insights-distribution-bar">
+									<span style="width: 20%;"></span>
+								</div>
+								<div class="insights-distribution-value">۲۰٪</div>
+							</div>
+
+							<div class="insights-distribution-note text-secondary mt-3">
+								بدون نمودار پیچیده، فقط یک نگاه ساده برای دیدن این‌که کدام شبکه، سهم بیشتری از گفتگوها را
+								دارد.
+							</div>
+						</div>
 					</div>
-					<ng-template #donut>
-<!--						<apx-chart-->
-<!--							[series]="donutSeries" [chart]="donutChart" [labels]="['X','Instagram','Facebook']"-->
-<!--							[responsive]="donutResponsive" [plotOptions]="donutOptions" ></apx-chart>-->
-					</ng-template>
-				</p-card>
+				</div>
 			</div>
 		</div>
 	</div>

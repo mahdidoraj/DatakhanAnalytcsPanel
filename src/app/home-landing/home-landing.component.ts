@@ -188,7 +188,7 @@ export class HomeLandingComponent implements OnInit, AfterViewInit {
 			{label: 'تماس', command: () => this.scrollTo('contact')},
 			{
 				label: 'تغییر تم',
-				icon: 'pi pi-sun',
+				icon: 'fas fa-sun',
 				command: () => this.toggleTheme(),
 			},
 		];

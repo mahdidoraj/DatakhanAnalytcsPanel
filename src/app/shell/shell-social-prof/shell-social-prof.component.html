@@ -1,13 +1,41 @@
-<section class="section-muted" revealOnScroll>
+<section class="section-muted section-trust" revealOnScroll>
 	<div class="container-xl text-center">
-		<h2 class="mb-2">مورد اعتماد تیم‌های داده و مارکتینگ</h2>
-		<p class="text-secondary">+۳۰۰ تیم از دیتا خوانا استفاده می‌کنند</p>
-		<div class="row g-3 mt-3">
-			<div class="col-6 col-md-3" *ngFor="let i of [1,2,3,4,5,6,7,8]">
-				<div class="glass round-12 py-4">
-					<img src="/assets/logo.webp" width="120" height="24" alt="لوگوی شریک" class="opacity-75 hover-opacity" />
+
+		<div class="trust-heading mb-4">
+			<div class="mb-4 hero-badge d-inline-flex mx-auto align-items-center gap-2">
+				<span class="hero-badge-dot"></span>
+				<span class="hero-badge-text">
+					<i class="fas fa-shield"></i>
+					مورد اعتماد تیم‌های داده و مارکتینگ
+				</span>
+				<span class="hero-badge-pill">قابل دسترس</span>
+			</div>
+			<h2 class="mb-1">
+				مورد اعتماد بیش از
+				<span class="text-gold">۳۰۰ تیم حرفه‌ای</span>
+			</h2>
+			<p class="text-secondary mb-0">
+				از استارتاپ‌های چابک تا سازمان‌های Enterprise
+			</p>
+		</div>
+
+		<div class="g-3 gap-3 px-2 mt-4 trust-logos-row overflow-x-scroll d-flex py-3">
+			<div class="col-2" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]">
+				<div class="feature-card round-12">
+					<img
+						src="/assets/logo.webp"
+						width="120"
+						height="120"
+						alt="لوگوی شریک"
+						class="trust-logo-img"/>
 				</div>
 			</div>
 		</div>
+
+		<div class="trust-meta mt-3 text-secondary d-flex justify-content-center align-items-center gap-2">
+			<i class="fas fa-check-circle"></i>
+			<span>میانگین رضایت ۹.۲ از ۱۰ در نظرسنجی مشتریان</span>
+		</div>
+
 	</div>
 </section>

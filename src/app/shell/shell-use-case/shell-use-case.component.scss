@@ -1,0 +1,181 @@
+.section-usecases {
+	padding-block: 4rem;
+	direction: rtl;
+}
+
+.usecases-header h2 {
+	font-weight: 800;
+	font-size: 1.6rem;
+}
+
+.usecases-header .text-gold {
+	background: linear-gradient(120deg, #facc6b, #f97316);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.usecases-badge {
+	padding: 0.25rem 0.9rem;
+	border-radius: 999px;
+	font-size: 0.8rem;
+	background: radial-gradient(circle at top left, rgba(250, 204, 21, 0.16), rgba(15, 23, 42, 0.9));
+	border: 1px solid rgba(250, 204, 21, 0.4);
+	color: #fef3c7;
+}
+
+.usecases-badge i {
+	font-size: 0.85rem;
+}
+
+/* کارت‌ها */
+.usecase-card {
+	border-radius: 1.4rem;
+	background: radial-gradient(circle at top, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.85));
+	border: 1px solid rgba(148, 163, 184, 0.45);
+	box-shadow:
+		0 18px 40px rgba(15, 23, 42, 0.85),
+		0 0 0 1px rgba(15, 23, 42, 0.9);
+	transition:
+		transform 0.22s ease,
+		box-shadow 0.22s ease,
+		border-color 0.22s ease,
+		background 0.22s ease;
+}
+
+.usecase-card .p-card-header {
+	padding: 1rem 1.25rem 0;
+}
+
+.usecase-card .p-card-body {
+	padding: 0.9rem 1.25rem 0.9rem;
+}
+
+.usecase-card .p-card-footer {
+	padding: 0 1.25rem 1rem;
+}
+
+/* آیکن و بالای کارت */
+.usecase-icon-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+}
+
+.usecase-icon {
+	width: 48px;
+	height: 48px;
+	border-radius: 999px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: radial-gradient(circle at 30% 0, #facc6b, #f97316);
+	box-shadow: 0 12px 26px rgba(15, 23, 42, 0.85);
+	color: #111827;
+}
+
+.usecase-icon i {
+	font-size: 1.3rem;
+}
+
+.usecase-pill {
+	font-size: 0.72rem;
+	border-radius: 999px;
+	padding: 0.2rem 0.7rem;
+	background: rgba(15, 23, 42, 0.95);
+	border: 1px solid rgba(148, 163, 184, 0.6);
+	color: #e5e7eb;
+}
+
+/* متن کارت */
+.usecase-title {
+	font-size: 1.05rem;
+	font-weight: 700;
+	color: #f9fafb;
+}
+
+.usecase-text {
+	font-size: 0.9rem;
+	color: #9ca3af !important;
+}
+
+/* بولت پوینت‌ها */
+.usecase-points {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 0.82rem;
+	color: #9ca3af;
+}
+
+.usecase-points li {
+	position: relative;
+	padding-right: 1.1rem;
+	margin-bottom: 0.2rem;
+}
+
+.usecase-points li::before {
+	content: "";
+	position: absolute;
+	top: 0.55rem;
+	right: 0.2rem;
+	width: 5px;
+	height: 5px;
+	border-radius: 999px;
+	background: linear-gradient(135deg, #facc6b, #f97316);
+}
+
+/* دکمه و تگ پایین کارت */
+.usecase-link-btn.p-button {
+	padding: 0;
+	font-size: 0.86rem;
+}
+
+.usecase-link-btn .p-button-label {
+	color: #facc6b;
+}
+
+.usecase-link-btn .p-button-icon-right {
+	margin-left: 0.35rem;
+	color: #facc6b;
+}
+
+.usecase-tag {
+	font-size: 0.72rem;
+	border-radius: 999px;
+	padding: 0.25rem 0.7rem;
+	background: rgba(15, 23, 42, 0.95);
+	border: 1px solid rgba(148, 163, 184, 0.6);
+	color: #e5e7eb;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+/* Hover */
+.usecase-card:hover {
+	transform: translateY(-6px);
+	box-shadow:
+		0 22px 46px rgba(15, 23, 42, 0.92),
+		0 0 0 1px rgba(250, 204, 21, 0.45);
+	border-color: rgba(250, 204, 21, 0.6);
+	background: radial-gradient(circle at top, rgba(251, 191, 36, 0.16), rgba(15, 23, 42, 0.97));
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+	.section-usecases {
+		padding-block: 3.25rem;
+	}
+
+	.usecases-header h2 {
+		font-size: 1.4rem;
+	}
+
+	.usecase-card .p-card-body,
+	.usecase-card .p-card-header,
+	.usecase-card .p-card-footer {
+		padding-inline: 1.05rem;
+	}
+}
