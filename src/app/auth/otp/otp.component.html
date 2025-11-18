@@ -1,16 +1,19 @@
 <h3 class="text-center mb-3">Login with Phone</h3>
 <form>
 	<div class="p-fluid">
-		<p-float-label>
-			<label>Phone Number</label>
-			<input pInputText placeholder="+98..."/>
+		<p-float-label variant="in" class="mt-3">
+			<label for="username">Username</label>
+			<input pInputText id="username"/>
 		</p-float-label>
-		<p-input-otp [length]="6"></p-input-otp>
+		<div class="my-3 mt-4">
+			<p-input-otp class="d-flex justify-content-between flex-row-reverse" [length]="6"></p-input-otp>
+		</div>
 		<button routerLink="/auth/sso-register" pButton type="button" label="Send OTP"
-		        class="p-button-warning w-full"></button>
+		        class="p-button-warning w-100"></button>
 	</div>
 </form>
 <p class="text-center mt-3">
 	<a>Back to Login</a>
+	&nbsp;
 	<a routerLink="/auth/login">Back to Login</a>
 </p>

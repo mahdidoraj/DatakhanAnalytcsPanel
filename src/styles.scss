@@ -2,16 +2,42 @@ body, div, html, a, p, h1, h2, h3, h4, h5, h6, span, button, input {
 	font-family: "Noto Sans Arabic", sans-serif;
 }
 
-.p-card {
-	max-width: 720px;
+.p-card,
+.card {
+	//max-width: 720px;
 	border-radius: 1.6rem;
-	padding: 2.3rem 2.2rem 2rem;
+	//padding: 2.3rem 2.2rem 2rem;
 	background: radial-gradient(circle at top, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.86)) !important;
 	border: 1px solid rgba(148, 163, 184, 0.5);
 	box-shadow: 0 20px 44px rgba(15, 23, 42, 0.9),
 	0 0 0 1px rgba(15, 23, 42, 0.95);
 	text-align: right;
 	position: relative;
+}
+
+a {
+	text-decoration: none;
+	background: linear-gradient(120deg, #facc6b, #f97316);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	white-space: nowrap;
+}
+
+.p-inputtext,
+.p-inputbutton {
+	width: 100%;
+}
+
+:host ::ng-deep {
+	.p-input-otp {
+		display: flex !important;
+		justify-content: space-between !important;
+	}
+
+	.p-inputotp-input {
+		width: 100% !important;
+	}
 }
 
 .card-header {
@@ -148,11 +174,6 @@ body, div, html, a, p, h1, h2, h3, h4, h5, h6, span, button, input {
 	border-radius: 999px;
 	background: rgba(244, 193, 93, 0.12);
 	color: #fde68a;
-}
-
-.card,
-p-card {
-	background: rgba(244, 193, 93, 0.12) !important;
 }
 
 /* Typography */
@@ -595,4 +616,49 @@ p-card {
 	.feature-card .p-card-footer {
 		padding-inline: 1rem;
 	}
+}
+
+.divider {
+	position: relative;
+	text-align: center;
+	font-size: 0.8rem;
+	color: white;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	width: 40%;
+	height: 1px;
+}
+
+.divider::after {
+	inset-inline-start: 0;
+	background: linear-gradient(
+			to left,
+			rgba(15, 23, 42, 0),
+			rgba(55, 65, 81, 0.9)
+	);
+}
+
+.divider::before {
+	inset-inline-end: 0;
+	background: linear-gradient(
+			to right,
+			rgba(15, 23, 42, 0),
+			rgba(55, 65, 81, 0.9)
+	);
+}
+
+.divider span {
+	padding: 0 0.75rem;
+	background: radial-gradient(circle at top, #020617, #020617);
+	border-radius: 999px;
+	border: 1px solid rgba(31, 41, 55, 0.9);
+	box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.95);
 }

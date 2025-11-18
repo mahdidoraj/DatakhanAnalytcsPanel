@@ -1,24 +1,4 @@
-<p-card>
-	<h1>test user style</h1>
-	<p>ba kossher</p>
-</p-card>
-<p-card>
-	<h1>test user style</h1>
-	<p>ba kossher</p>
-</p-card>
-<p-card>
-	<h1>test user style</h1>
-	<p>ba kossher</p>
-</p-card>
-<p-card>
-	<h1>test user style</h1>
-	<p>ba kossher</p>
-</p-card>
-<p-card>
-	<h1>test user style</h1>
-	<p>ba kossher</p>
-</p-card>
-<div class="container">
+<div class="container-fluid">
 	<div class="row g-3" *ngIf="!loadingKpi(); else kpiSkeletons">
 		<div class="col-12 col-sm-6 col-xl-3" *ngFor="let k of kpis()">
 			<ws-kpi-card [title]="k.title" [value]="k.value" [unit]="k.unit" [delta]="k.delta" [icon]="k.icon"></ws-kpi-card>
@@ -31,7 +11,7 @@
 	<!-- CHARTS -->
 	<div class="row g-3 mt-1">
 		<div class="col-12 col-lg-6">
-			<p-card class=" shadow-sm border-0 rounded-4">
+			<p-card class="shadow-sm border-0 rounded-4">
 				<div class="card-header bg-transparent border-0 fw-semibold">احساسات در بازه زمانی</div>
 				<div class="card-body">
 					<div class="chart-h" *ngIf="!loadingCharts(); else chartSk1">
