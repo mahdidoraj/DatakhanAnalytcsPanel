@@ -1,0 +1,10 @@
+<!-- back-to-top.component.html -->
+<button
+	pButton
+	type="button"
+	class="p-button-rounded back-to-top glass back-to-top-floating"
+	[ngStyle]="{ opacity: visible ? 1 : 0, pointerEvents: visible ? 'auto' : 'none' }"
+	(click)="goTop()"
+	aria-label="بازگشت به بالا">
+	<i class="fa-solid fa-arrow-up"></i>
+</button>

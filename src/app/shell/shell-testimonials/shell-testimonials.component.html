@@ -1,14 +1,63 @@
-<section revealOnScroll>
+<section id="testimonials" class="section-testimonials" revealOnScroll>
 	<div class="container-xl">
-		<h2 class="mb-3">نظرات کاربران</h2>
-		<p-carousel [value]="items" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="3500">
+
+		<div class="testimonials-header text-center mb-4">
+
+			<h2 class="mb-1">
+				<i class="fas fa-comment text-gold"></i>
+				نظرات
+				<span class="text-gold">کاربران</span>
+			</h2>
+			<p class="text-secondary mb-0">
+				نگاهی کوتاه به تجربه‌ی تیم‌های داده، مارکتینگ و برند از کار با پلتفرم
+			</p>
+		</div>
+
+		<p-carousel
+			[value]="items"
+			[numVisible]="1"
+			[numScroll]="1"
+			[circular]="true"
+			[autoplayInterval]="4500"
+			styleClass="testimonials-carousel">
 			<ng-template pTemplate="item" let-it>
-				<div class="glass round-12 p-4 text-center">
-					<img [src]="it.avatar" width="64" height="64" class="rounded-circle mb-2" alt="آواتار"/>
-					<h3 class="m-0">{{it.name}}</h3>
-					<small class="text-secondary d-block mb-2">{{it.role}}</small>
-					<p class="m-0 maxw-720 mx-auto">{{it.text}}</p>
-					<p-rating [readonly]="true" [ngModel]="5" styleClass="mt-3"></p-rating>
+				<div class="testimonial-card glass card-glass mx-auto" style="box-shadow: none !important;">
+					<div class="d-flex">
+						<div class="testimonial-quote-icon">
+							<i class="fas fa-quote-left"></i>
+						</div>
+
+						<p class="testimonial-text me-4 my-auto">
+							{{ it.text }}
+						</p>
+					</div>
+					<div
+						class="testimonial-footer d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 mt-3">
+						<div class="d-flex align-items-center gap-3">
+							<img
+								[src]="it.avatar"
+								width="56"
+								height="56"
+								class="rounded-circle testimonial-avatar"
+								alt="آواتار {{ it.name }}"/>
+
+							<div class="text-start">
+								<h3 class="testimonial-name m-0">{{ it.name }}</h3>
+								<small class="text-secondary d-block">{{ it.role }}</small>
+							</div>
+						</div>
+
+						<div class="d-flex flex-column align-items-sm-end align-items-start gap-1">
+							<p-rating
+								[readonly]="true"
+								[ngModel]="it.rating || 5"
+								styleClass="testimonial-rating text-gold">
+							</p-rating>
+							<small class="testimonial-rating-label text-secondary">
+								امتیاز میانگین تجربه
+							</small>
+						</div>
+					</div>
 				</div>
 			</ng-template>
 		</p-carousel>

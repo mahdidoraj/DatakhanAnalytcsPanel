@@ -1,9 +1,103 @@
-<section class="grad-gold" style="--bs-bg-opacity:.15;background:linear-gradient(120deg,rgba(232,197,71,.15),rgba(183,134,11,.15))">
+<section
+	id="cta"
+	class="grad-gold py-5"
+	style="--bs-bg-opacity:.15;background:linear-gradient(120deg,rgba(232,197,71,.15),rgba(183,134,11,.15))"
+>
 	<div class="container-xl text-center">
 		<h2 class="mb-2">آماده‌اید داده‌ها را به تصمیم تبدیل کنید؟</h2>
-		<div class="d-flex justify-content-center gap-2">
-			<button pButton label="شروع رایگان" class="btn-gold" trackEvent="pricing_cta_click"></button>
-			<button pButton label="درخواست دمو" class="p-button-outlined btn-outline-gold" trackEvent="demo_open"></button>
+
+		<div class="d-flex justify-content-center gap-2 mb-3 my-3 flex-wrap">
+			<button
+				pButton
+				label="شروع رایگان"
+				class="btn-gold"
+				trackEvent="pricing_cta_click">
+			</button>
+
+			<button
+				pButton
+				label="درخواست دمو"
+				class="p-button-outlined btn-outline-gold"
+				trackEvent="demo_open">
+			</button>
 		</div>
+
+		<form class="hero-form glass-panel mt-3 text-end" [formGroup]="heroForm" (ngSubmit)="onSubmitHeroForm()">
+
+			<div class="row g-3 align-items-end">
+
+				<div class="col-12 col-md-5">
+					<label class="form-label mb-1">ایمیل کاری</label>
+					<input
+						pInputText
+						type="email"
+						formControlName="email"
+						class="w-100"
+						[ngClass]="{'ng-invalid-field': email.invalid && (email.dirty || email.touched)}"
+						placeholder="you@company.com"/>
+
+					<small
+						class="text-danger d-block mt-1"
+						*ngIf="email.invalid && (email.dirty || email.touched)">
+						<span *ngIf="email.errors?.['required']">ایمیل کاری الزامی است.</span>
+						<span *ngIf="email.errors?.['email']">فرمت ایمیل صحیح نیست.</span>
+					</small>
+				</div>
+
+				<div class="col-12 col-md-4">
+					<label class="form-label mb-1">حوزه فعالیت</label>
+					<p-dropdown
+						formControlName="industry"
+						[options]="industries"
+						optionLabel="label"
+						placeholder="انتخاب کنید"
+						class="w-100"
+						[ngClass]="{'ng-invalid-field': industry.invalid && (industry.dirty || industry.touched)}">
+					</p-dropdown>
+
+					<small
+						class="text-danger d-block mt-1"
+						*ngIf="industry.invalid && (industry.dirty || industry.touched)">
+						حوزه فعالیت را انتخاب کنید.
+					</small>
+				</div>
+
+				<div class="col-12 col-md-3">
+					<div class="d-flex flex-column gap-2 mt-md-3">
+
+						<div class="d-flex align-items-center gap-2 justify-content-md-end justify-content-start">
+							<p-checkbox
+								inputId="agree"
+								formControlName="agree"
+								[binary]="true">
+							</p-checkbox>
+							<label for="agree" class="hero-agree-label mb-0">
+								تأیید شرایط استفاده
+							</label>
+						</div>
+
+						<small
+							class="text-danger d-block"
+							*ngIf="agree.invalid && (agree.dirty || agree.touched)">
+							برای ادامه باید شرایط استفاده را تأیید کنید.
+						</small>
+
+						<button
+							pButton
+							type="submit"
+							label="ثبت درخواست"
+							class="btn-gold-compact mt-1"
+							[disabled]="heroForm.invalid || loading">
+						</button>
+
+						<small class="text-muted d-block" *ngIf="!loading && heroForm.valid">
+							زمان تقریبی تماس: کمتر از یک روز کاری.
+						</small>
+
+					</div>
+				</div>
+
+			</div>
+		</form>
 	</div>
 </section>

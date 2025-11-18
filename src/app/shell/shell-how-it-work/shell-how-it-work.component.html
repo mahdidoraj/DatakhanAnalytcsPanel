@@ -1,12 +1,33 @@
-<section revealOnScroll>
+<section id="how-it-works" class="section-how" revealOnScroll>
 	<div class="container-xl">
-		<h2 class="mb-3">چگونه کار می‌کند؟</h2>
-		<ol class="list-unstyled position-relative ps-4">
-			<li class="mb-3 d-flex gap-3 align-items-start" *ngFor="let s of steps; let i = index">
-				<span class="grad-gold d-inline-flex align-items-center justify-content-center rounded-circle text-dark fw-bold" style="width:36px;height:36px">{{i+1}}</span>
-				<div>
-					<h3 class="m-0">{{s.title}}</h3>
-					<p class="text-secondary m-0">{{s.desc}}</p>
+		<div class="how-header d-flex justify-content-center align-items-center flex-column mb-4 text-center text-lg-start">
+			<span class="how-badge d-inline-flex align-items-center gap-2 mb-2">
+				<i class="fas fa-sitemap"></i>
+				<span>از داده خام تا بینش قابل‌اقدام</span>
+			</span>
+			<h2 class="mb-1">
+				چگونه
+				<span class="text-gold">کار می‌کند؟</span>
+			</h2>
+			<p class="text-secondary mb-0">
+				یک مسیر شفاف و مرحله‌به‌مرحله برای تبدیل گفتگوها به تصمیم‌های دقیق
+			</p>
+		</div>
+
+		<ol class="how-list list-unstyled position-relative">
+			<li
+				class="how-item d-flex gap-3 align-items-start"
+				*ngFor="let s of steps; let i = index">
+
+				<div class="how-marker">
+					<span class="how-index">
+						{{ i + 1 }}
+					</span>
+				</div>
+
+				<div class="how-content">
+					<h3 class="m-0 how-title">{{ s.title }}</h3>
+					<p class="text-secondary m-0 how-desc">{{ s.desc }}</p>
 				</div>
 			</li>
 		</ol>

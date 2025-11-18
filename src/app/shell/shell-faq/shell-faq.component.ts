@@ -8,8 +8,19 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ShellFaqComponent {
-	q = '';
-	items = [
+	q: string = '';
+
+	get filteredFaqs() {
+		const term = this.q?.trim();
+		if (!term) return this.faqs;
+
+		const t = term.toLowerCase();
+		return this.faqs.filter(f =>
+			f.q?.toLowerCase().includes(t) || f.a?.toLowerCase().includes(t),
+		);
+	}
+
+	faqs = [
 		{q: 'آیا از زبان فارسی پشتیبانی می‌شود؟', a: 'بله، تحلیل احساسات فارسی پشتیبانی می‌شود.'},
 		{q: 'چگونه حساب‌ها را متصل کنم؟', a: 'از طریق داشبورد و احراز هویت امن OAuth.'},
 		{q: 'آیا دیتای خام قابل دانلود است؟', a: 'بله در پلن حرفه‌ای و بالاتر.'},
@@ -17,10 +28,5 @@ export class ShellFaqComponent {
 		{q: 'آیا API دارید؟', a: 'بله، REST/GraphQL برای استفاده توسعه‌دهندگان فراهم است.'},
 		{q: 'آیا محدودیت درخواست وجود دارد؟', a: 'بله، بر اساس پلن انتخابی.'},
 	];
-
-	filtered() {
-		const k = this.q.trim();
-		return !k ? this.items : this.items.filter(i => (i.q + i.a).includes(k));
-	}
 
 }

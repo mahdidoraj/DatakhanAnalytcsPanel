@@ -26,6 +26,7 @@ import { ShellEndCtaComponent } from './shell-end-cta/shell-end-cta.component';
 import { ShellFooterComponent } from './shell-footer/shell-footer.component';
 import { ShellDemoDialogComponent } from './shell-demo-dialog/shell-demo-dialog.component';
 import { ShellParticlesComponent } from './shell-particles/shell-particles.component';
+import { ShellTopButtonComponent } from './shell-top-button/shell-top-button.component';
 
 @NgModule({
 	declarations: [
@@ -47,7 +48,8 @@ import { ShellParticlesComponent } from './shell-particles/shell-particles.compo
 		ShellEndCtaComponent,
 		ShellFooterComponent,
 		ShellDemoDialogComponent,
-  ShellParticlesComponent,
+		ShellParticlesComponent,
+  ShellTopButtonComponent,
 	],
 	imports: [
 		CommonModule,
@@ -76,6 +78,7 @@ import { ShellParticlesComponent } from './shell-particles/shell-particles.compo
 		ShellEndCtaComponent,
 		ShellFooterComponent,
 		ShellParticlesComponent,
+		ShellTopButtonComponent,
 	],
 	providers: [
 		DialogService,
